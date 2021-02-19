@@ -16,6 +16,8 @@
     "react-mathjax": "^1.0.1",
     "react-scripts": "4.0.2",
     "react-three-fiber": "^5.3.18",
+    "react-use-gesture": "^9.0.4",
+    "three": "^0.125.2",
     "web-vitals": "^1.0.1"
   },
   "scripts": {
