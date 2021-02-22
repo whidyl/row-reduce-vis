@@ -10,7 +10,7 @@ function MatrixViewer({matrix, setMatrix}) {
     const [selected, setSelected] = useState("vector")
 
     return (
-        <div style={{textAlign: "left", marginLeft: "auto", marginTop: "20px", maxWidth: "800px", display:"table-cell"}}>
+        <div style={{textAlign: "left", marginLeft: "auto", marginTop: "0px", maxWidth: "800px", display:"table-cell"}}>
             <FormToggleBar selected={selected} setSelected={setSelected}/>
             <div style={{minWidth:"700px", margin:"auto", marginTop: (selected === "edit" ? "50px" : "90px")}}>
             {

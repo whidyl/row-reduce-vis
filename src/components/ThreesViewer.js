@@ -2,11 +2,16 @@ import React from 'react';
 import { Canvas } from 'react-three-fiber';
 import VectorGraphView from './VectorGraphView';
 import PlaneGraphView from './PlaneGraphView';
+import GraphToggleBar from './GraphToggleBar';
 
 const ThreesViewer = ({ matrix, graphMode, setGraphMode }) => {
     return (
+        <div>
+        <div>
+          <GraphToggleBar graphMode={graphMode} setGraphMode={setGraphMode} />
+        </div>
         <div style={{backgroundColor: "", float:"right", minWidth:"800px"}}>
-            <Canvas>
+            <Canvas style={{height: "400px"}}>
               <pointLight position={[10, 10, 10]} />
               <pointLight position={[-10, 10, 10]} />
               {
@@ -16,6 +21,7 @@ const ThreesViewer = ({ matrix, graphMode, setGraphMode }) => {
                 }[graphMode]
               }
             </Canvas>
+        </div>
         </div>
     )
 }
