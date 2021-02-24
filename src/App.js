@@ -6,15 +6,15 @@ import ThreesViewer from './components/ThreesViewer';
 
 
 function App() {
-  const [matrix, setMatrix] = useState([[1, 2, 3, 0],
-                                        [4, 5, 6, 0],
-                                        [7, 8, 9, 0]])
+  const [matrix, setMatrix] = useState([[1, 2, -1, 1],
+                                        [2, -1, 1, 1],
+                                        [1, -1, 3, 1]])
   
   const [graphMode, setGraphMode] = useState("vector")
 
   return (
     <div className="App" style={{display: "flex"}}>
-      <MatrixViewer matrix={matrix} setMatrix={setMatrix}/>
+      <MatrixViewer matrix={matrix} setMatrix={setMatrix} isVecGraph={graphMode === "vector"}/>
       <ThreesViewer matrix={matrix} graphMode={graphMode} setGraphMode={setGraphMode}/>
       
       

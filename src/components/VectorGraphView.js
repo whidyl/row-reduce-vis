@@ -18,9 +18,9 @@ function VectorGraphView(props) {
   const vec4Group = useRef();
   const vec4Mesh = useRef();
 
-  const radiansX = (0 * Math.PI) / 180;
-  const radiansY = (0 * Math.PI) / 180;
-  const radiansZ = (0 * Math.PI) / 180;
+  const radiansX = (-0.5 * Math.PI);
+  const radiansY = (0 * Math.PI);
+  const radiansZ = (0 * Math.PI);
 
   useEffect(() => {
     xAxisMesh.current.rotation.x = 1.57;
@@ -28,37 +28,37 @@ function VectorGraphView(props) {
 
     vec1Mesh.current.rotation.x = Math.PI/2
     vec1Mesh.current.scale.set(1, vecMag(props.matrix[0][0], props.matrix[1][0], props.matrix[2][0]), 1);
-    vec1Mesh.current.position.z = vecMag(props.matrix[0][0], props.matrix[1][0], props.matrix[2][0])/2;
+    vec1Mesh.current.position.z = vecMag(props.matrix[0][0], props.matrix[2][0], props.matrix[1][0])/2;
 
     vec2Mesh.current.rotation.x = Math.PI/2
     vec2Mesh.current.scale.set(1, vecMag(props.matrix[0][1], props.matrix[1][1], props.matrix[2][1]), 1);
-    vec2Mesh.current.position.z = vecMag(props.matrix[0][1], props.matrix[1][1], props.matrix[2][1])/2;
+    vec2Mesh.current.position.z = vecMag(props.matrix[0][1], props.matrix[2][1], props.matrix[1][1])/2;
 
     vec3Mesh.current.rotation.x = Math.PI/2
     vec3Mesh.current.scale.set(1, vecMag(props.matrix[0][2], props.matrix[1][2], props.matrix[2][2]), 1);
-    vec3Mesh.current.position.z = vecMag(props.matrix[0][2], props.matrix[1][2], props.matrix[2][2])/2;
+    vec3Mesh.current.position.z = vecMag(props.matrix[0][2], props.matrix[2][2], props.matrix[1][2])/2;
 
     vec4Mesh.current.rotation.x = Math.PI/2
     vec4Mesh.current.scale.set(1, vecMag(props.matrix[0][3], props.matrix[1][3], props.matrix[2][3]), 1);
-    vec4Mesh.current.position.z = vecMag(props.matrix[0][3], props.matrix[1][3], props.matrix[2][3])/2;
+    vec4Mesh.current.position.z = vecMag(props.matrix[0][3], props.matrix[2][3], props.matrix[1][3])/2;
   }, [])
 
   useEffect(() => {
     vec1Mesh.current.scale.set(1, vecMag(props.matrix[0][0], props.matrix[1][0], props.matrix[2][0]), 1);
-    vec1Mesh.current.position.z = vecMag(props.matrix[0][0], props.matrix[1][0], props.matrix[2][0])/2;
-    vec1Group.current.lookAt(new THREE.Vector3(props.matrix[0][0], props.matrix[1][0], props.matrix[2][0]));
+    vec1Mesh.current.position.z = vecMag(props.matrix[0][0], props.matrix[2][0], props.matrix[1][0])/2;
+    vec1Group.current.lookAt(new THREE.Vector3(props.matrix[0][0], props.matrix[2][0], props.matrix[1][0]));
 
     vec2Mesh.current.scale.set(1, vecMag(props.matrix[0][1], props.matrix[1][1], props.matrix[2][1]), 1);
-    vec2Mesh.current.position.z = vecMag(props.matrix[0][1], props.matrix[1][1], props.matrix[2][1])/2;
-    vec2Group.current.lookAt(new THREE.Vector3(props.matrix[0][1], props.matrix[1][1], props.matrix[2][1]));
+    vec2Mesh.current.position.z = vecMag(props.matrix[0][1], props.matrix[2][1], props.matrix[1][1])/2;
+    vec2Group.current.lookAt(new THREE.Vector3(props.matrix[0][1], props.matrix[2][1], props.matrix[1][1]));
 
     vec3Mesh.current.scale.set(1, vecMag(props.matrix[0][2], props.matrix[1][2], props.matrix[2][2]), 1);
-    vec3Mesh.current.position.z = vecMag(props.matrix[0][2], props.matrix[1][2], props.matrix[2][2])/2;
-    vec3Group.current.lookAt(new THREE.Vector3(props.matrix[0][2], props.matrix[1][2], props.matrix[2][2]));
+    vec3Mesh.current.position.z = vecMag(props.matrix[0][2], props.matrix[2][2], props.matrix[1][2])/2;
+    vec3Group.current.lookAt(new THREE.Vector3(props.matrix[0][2], props.matrix[2][2], props.matrix[1][2]));
 
     vec4Mesh.current.scale.set(1, vecMag(props.matrix[0][3], props.matrix[1][3], props.matrix[2][3]), 1);
-    vec4Mesh.current.position.z = vecMag(props.matrix[0][3], props.matrix[1][3], props.matrix[2][3])/2;
-    vec4Group.current.lookAt(new THREE.Vector3(props.matrix[0][3], props.matrix[1][3], props.matrix[2][3]));
+    vec4Mesh.current.position.z = vecMag(props.matrix[0][3], props.matrix[2][3], props.matrix[1][3])/2;
+    vec4Group.current.lookAt(new THREE.Vector3(props.matrix[0][3], props.matrix[2][3], props.matrix[1][3]));
     
     //vec1Mesh.current.position.y = vecMag(props.matrix[0][0], props.matrix[1][0], props.matrix[2][0])/2;
   }, [props.matrix])
@@ -90,7 +90,7 @@ function VectorGraphView(props) {
         <mesh ref={xAxisMesh}>
             <cylinderBufferGeometry args={[0.015, 0.015, 100, 14]} />
             <meshStandardMaterial color={'gray'} />
-            <Html position={[0, 0, -3]}>
+            <Html position={[0, 0, 3]}>
               y
             </Html>
         </mesh>

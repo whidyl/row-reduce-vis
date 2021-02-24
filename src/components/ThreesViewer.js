@@ -12,8 +12,7 @@ const ThreesViewer = ({ matrix, graphMode, setGraphMode }) => {
         </div>
         <div style={{backgroundColor: "", float:"right", minWidth:"800px"}}>
             <Canvas style={{height: "400px"}}>
-              <pointLight position={[10, 10, 10]} />
-              <pointLight position={[-10, 10, 10]} />
+              <ambientLight />
               {
                 {
                   "vector": <VectorGraphView position={[0, 0, 0]} matrix={matrix} />,

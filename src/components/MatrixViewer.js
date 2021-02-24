@@ -6,7 +6,7 @@ import FormToggleBar from './FormToggleBar'
 import EditView from './EditView'
 
 
-function MatrixViewer({matrix, setMatrix}) {
+function MatrixViewer({matrix, setMatrix, isVecGraph}) {
     const [selected, setSelected] = useState("vector")
 
     return (
@@ -15,10 +15,10 @@ function MatrixViewer({matrix, setMatrix}) {
             <div style={{minWidth:"700px", margin:"auto", marginTop: (selected === "edit" ? "50px" : "90px")}}>
             {
                 {
-                    'matrix':<MatrixView matrix={matrix}/>,
-                    'vector':<VectorView matrix={matrix}/>,
-                    'equation':<EquationView matrix={matrix}/>,
-                    'edit':<EditView matrix={matrix} setMatrix={setMatrix}/>
+                    'matrix':<MatrixView matrix={matrix} isVecGraph={isVecGraph}/>,
+                    'vector':<VectorView matrix={matrix} isVecGraph={isVecGraph}/>,
+                    'equation':<EquationView matrix={matrix} isVecGraph={isVecGraph}/>,
+                    'edit':<EditView matrix={matrix} setMatrix={setMatrix} isVecGraph={isVecGraph}/>
                 }[selected]
             }
             </div>

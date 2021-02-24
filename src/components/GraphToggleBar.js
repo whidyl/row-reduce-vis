@@ -11,9 +11,9 @@ const GraphToggleBar = ({graphMode, setGraphMode}) => {
 
 
     return (
-        <div style={{width: "220px", margin: "0 auto", marginTop:"40px"}}>
+        <div style={{width: "200px", margin: "0 auto", marginTop:"40px"}}>
             <InputLabel style={{float: "left", marginRight: "20px", marginTop:"15px"}}> Graph: </InputLabel> 
-            <ToggleButtonGroup exclusive value={graphMode} onChange={handleViewChange}>
+            <ToggleButtonGroup exclusive value={graphMode} onChange={handleViewChange} size="small">
                 <ToggleButton disableRipple value="plane"> Plane </ToggleButton>
                 <ToggleButton disableRipple value="vector"> Vector </ToggleButton>
             </ToggleButtonGroup>

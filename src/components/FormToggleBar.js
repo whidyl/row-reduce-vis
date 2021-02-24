@@ -13,8 +13,8 @@ const FormToggleBar = ({selected, setSelected}) => {
     return (
         <div style={{width: "370px", margin: "0 auto", marginTop:"40px"}}>
             <InputLabel style={{float: "left", marginRight: "20px", marginTop:"15px"}}> Form: </InputLabel> 
-            <ToggleButtonGroup exclusive value={selected} onChange={handleViewChange}>
-                <ToggleButton disableRipple value="matrix"> Matrix </ToggleButton>
+            <ToggleButtonGroup exclusive value={selected} onChange={handleViewChange} size="small">
+                <ToggleButton disableRipple value="matrix" > Matrix </ToggleButton>
                 <ToggleButton disableRipple value="vector"> Vector </ToggleButton>
                 <ToggleButton disableRipple value="equation"> Equation </ToggleButton>
                 <ToggleButton disableRipple value="edit"> Edit </ToggleButton>
