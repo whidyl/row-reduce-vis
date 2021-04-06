@@ -33,14 +33,14 @@ export function getPlanePointsForRow(matrix, row){
     var topRight = pointAtXY( xScale, yScale);
 
 
-    if (zCoeff < 1 && yCoeff < 1){
+    if (zCoeff < 1 && yCoeff < 1 && xCoeff >= 0.9) {
          botLeft  = pointAtZY(-xScale, -yScale);
          topLeft  = pointAtZY(-xScale,  yScale);
          botRight = pointAtZY( xScale, -yScale);
          topRight = pointAtZY( xScale,  yScale);
     } 
 
-    if (xCoeff < 1 && zCoeff < 1){
+    if (xCoeff < 1 && zCoeff < 1 && yCoeff >= 0.9) {
         botLeft  = pointAtXZ(-xScale, -yScale);
         topLeft  = pointAtXZ(-xScale,  yScale);
         botRight = pointAtXZ( xScale, -yScale);

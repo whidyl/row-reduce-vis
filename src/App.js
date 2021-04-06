@@ -14,11 +14,10 @@ function App() {
 
   return (
     <div className="App" style={{display: "flex"}}>
+      
       <MatrixViewer matrix={matrix} setMatrix={setMatrix} isVecGraph={graphMode === "vector"}/>
       <ThreesViewer matrix={matrix} graphMode={graphMode} setGraphMode={setGraphMode}/>
       
-      
-      {/* <div style={{backgroundColor: "lightyellow", width: "100%", minHeight: "200px"}}>dd</div> */}
     </div>  
   );
 }
