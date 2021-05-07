@@ -4,8 +4,4 @@ Utilizes LaTeX for mathematical visualizations. Uses the ThreeJS graphics librar
 
 Allows for the input of row operations. This allows you to see how the plane visualization of the system equations has the same solution space when any valid row-operation is applied. The plane is simply rotated about the its axis, leaving the solution space untouched.
 
-Youtube demo: (click the image below) 
-
-
-[![demo](http://img.youtube.com/vi/oAWXrd2ZFjA/0.jpg)](https://www.youtube.com/watch?v=oAWXrd2ZFjA "Row reduce vis")
-
+view a demo on my website: ___
